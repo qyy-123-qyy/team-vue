@@ -7,7 +7,7 @@
         <span class="tips">尊敬的用户，欢迎您回来!</span>
         <span class="account" @click="goin">
           还没有账号，
-          <font color="red">去注册</font>
+          <font color="#0075E0">去注册</font>
         </span>
       </div>
 
@@ -117,7 +117,7 @@ export default {
   padding: 20px 10px;
 }
 .vip .hd {
-  color: #ff4466;
+  color: #289EFF;
   font-size: 18px;
 }
 .vip .tips {

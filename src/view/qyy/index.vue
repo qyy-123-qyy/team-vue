@@ -215,7 +215,107 @@
     <!-- 成功案例 -->
     <div class="success_box">
       <div class="success">
-
+         <div class="success_hd">
+           <h3> 成功案例</h3>
+           <span class='evaluation_more success_more'>查看更多</span>
+         </div>
+         <div class="success_right">
+           <ul>
+             <!-- 第一个 -->
+             <li>
+               <div><img src="../../assets/cxy.png"></div>
+               <div class="success_content">
+                <p class="success_title">成功案例：AUSHEN TECHNOLOGY 整包项目</p>
+                <p class="price">¥147967</p>
+                <p>项目周期：95天</p>
+                <p>交付时间：2019-10-18</p>
+               </div>
+             </li>
+              <!-- 第二个 -->
+             <li class="success_two">
+               <div><img src="../../assets/cxy2.png"></div>
+               <div class="success_content">
+                <p class="success_title">成功案例：美国Storify.ai科技公司 云端工作</p>
+                <p class="price">¥70000</p>
+                <p>项目周期：5个月</p>
+                <p>交付时间：2019-08-27</p>
+               </div>
+             </li>
+              <!-- 第三个 -->
+             <li>
+               <div><img src="../../assets/cxy3.png"></div>
+               <div class="success_content">
+                <p class="success_title">成功案例：光年实验室 云端工作</p>
+                <p class="price">¥10000</p>
+                <p>项目周期：持续云端工作</p>
+                <p>交付时间：2019-08-01</p>
+               </div>
+             </li>
+           </ul>
+         </div>
+      </div>
+    </div>
+    <!-- 免费发布 -->
+    <div class="free_box">
+      <div>
+        <p class="free">免费发布需求</p>
+        <p class="sign">申请签约接单</p>
+      </div>
+    </div>
+    <!-- 友情链接 -->
+    <div class="friend_link">
+       <img src="../../assets/logo_new.png">
+       <div class="link">
+         <h5>重点城市程序员兼职推荐</h5>
+         <div>
+           <ul>
+             <li>北京程序员兼职</li>
+             <li>上海程序员兼职</li>
+             <li>深圳程序员兼职</li>
+             <li>杭州程序员兼职</li>
+             <li>广州程序员兼职</li>
+             <li>成都程序员兼职</li>
+             <li>武汉程序员兼职</li>
+           </ul>
+      </div>
+      <span>更多</span>
+       </div>
+       <!-- 第二个 -->
+          <div class="link link_two">
+         <h5>重点岗位程序员兼职推荐</h5>
+         <div>
+           <ul>
+             <li>Java兼职</li>
+             <li>C++兼职</li>
+             <li>PHP兼职</li>
+             <li>C兼职</li>
+             <li>C#兼职</li>
+             <li>Python兼职</li>
+             <li>Ruby兼职</li>
+             <li>Node.js兼职</li>
+             <li>Android兼职</li>
+              <li>iOS兼职</li>
+             <li>前端兼职</li>
+           </ul>
+      </div>
+      <span>更多</span>
+       </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+      <div class="foot_left">
+        <ul>
+          <li>App下载</li>
+          <li>帮助</li>
+          <li>关于我们</li>
+          <li>合作伙伴</li>
+          <li>意见反馈</li>
+          <li><span>@程序员客栈</span> 远程工作</li>
+        </ul>
+      </div>
+      <div class="foot_right">
+        <p>浙ICP备15029175号</p>
+        <p><img src="../../assets/badge.png">浙公网安备 33011002011566号</p>
       </div>
     </div>
     </div>
@@ -385,7 +485,6 @@ margin:80px 394px;
 .item h3::before{
   width: 44px;
   height: 3px;
-  background-color: red;
   position: absolute;
   content: "";
   left: 50%;
@@ -440,7 +539,6 @@ margin:80px 394px;
   height: 55px;
   margin: 49px 0 0 124px ;
 }
-
 .item .item_service .bg .item_title{
 font-size: 22px;
 color: #fff;
@@ -603,9 +701,6 @@ display: block;
   padding: 0;
   margin: 0 auto;
 }
-.evaluation {
-
-}
 .evaluation div{
    width: 122px;
    height: 122px;
@@ -632,12 +727,16 @@ display: block;
     padding:10px;
 
 }
-.evaluation  p{
-    text-align: center;
-    font-size: 18px;
-    color: #323232;
-    padding:20px 50px 0;
-    line-height:30px;
+.evaluation p{
+  text-align: center;
+  font-size: 18px;
+  color: #323232;
+  padding:20px 50px 0;
+  line-height:30px;
+  cursor: pointer;
+}
+.evaluation p:hover{
+  color: #258fe6
 }
 .evaluation_more{
     display: block;
@@ -655,7 +754,7 @@ display: block;
 .index_num{
   width: 1000px;
   height: 90px;
-  margin:20px auto;
+  margin:40px auto;
 }
 .index_num ul{
   width: 100%;
@@ -682,13 +781,225 @@ display: block;
 /* 成功案例 */
 .success_box{
   width: 100%;
-  height: 350px;
-  background-color:rgba(250,250,250,1);;
+  background-color:rgba(250,250,250,1);
+  height: 400px;
+  padding-top: 60px;
 }
 .success_box .success{
   width: 1000px;
   height: 100%;
   margin: auto;
-  background-color: lavender;
+  display: flex;
+}
+.success_box .success .success_hd{
+  width: 140px;
+  height: 130px;
+  margin-right: 60px;
+}
+.success_box .success .success_hd h3{
+  font-size: 32px;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  padding-bottom:40px;
+}
+.success_box .success .success_hd h3::before{
+  width: 44px;
+  height: 3px;
+  position: absolute;
+  content: "";
+  background-color: #44A0FF;
+  top:50px;
+  left:50%;
+  margin-left: -22px;
+} 
+.success_box .success .success_hd .success_more{
+  width: 120px;
+}
+.success_box .success .success_hd .success_more:hover{
+  background-color: #0075E0;
+  color: #fff;
+  border: none;
+}
+.success_box .success_right{
+  float: left;
+  width: 800px;
+  height: 100%;
+}
+.success_box .success_right ul{
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+.success_box .success_right ul li{
+  width: 260px;
+  height: 100%;
+  float: left;
+  cursor: pointer;
+}
+.success_box .success_right ul li.success_two{
+  margin: 0 10px;
+}
+.success_box .success_right ul li:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05)
+}
+.success_box .success_right ul li img{
+  vertical-align: middle;
+   width: 260px;
+   height: 200px
+}
+.success_box .success_right ul li .success_content{
+  padding: 20px;  
+  background-color: #fff;
+}
+.success_box .success_right ul li .success_content .success_title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.success_box .success_right ul li .success_content .price{
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.success_box .success_right ul li .success_content p{
+  font-size: 14px;
+}
+.free_box{
+  height:200px;
+  background-image: url(../../assets/bg.png);
+  width: 100%;
+  background-size: 100% 200px;
+  background-color: #189df6;
+  margin-top: 60px;
+  position: relative;
+}
+.free_box div{
+  left:50%;
+  position: absolute;
+  top:50%;
+  margin: -26px 0 0 -209px;
+
+}
+.free_box p{
+  width: 190px;
+  height: 20px;
+  padding: 15px 0;
+  display: inline-block;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+.free_box p.free{
+  background-color: #fff;
+  color: #0075E0;
+}
+.free_box p.sign{
+  color:#fff ;
+  border: 2px solid #fff;
+  height: 16px;
+  margin-left: 30px;
+}
+.free_box p.sign:hover{
+  background-color: #0075E0;
+}
+/* 友情链接 */
+.friend_link{
+  width: 1000px;
+  height: 126px;
+  margin: auto;
+  padding: 50px 0 20px;
+}
+.friend_link img{
+  width: 115px;
+  height: 38px;
+  float: left;
+}
+.friend_link .link{
+  width: 790px;
+  float: left;
+  padding-left: 95px;
+}
+.friend_link .link.link_two{
+  margin-left: 115px;
+  margin-top: 10px;
+}
+.friend_link .link h5{
+  color: #4a4a4a;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.friend_link .link ul{
+  list-style: none;
+}
+.friend_link .link ul li{
+  font-size: 12px;
+  color: #4a4a4a;
+  margin-bottom: 12px;
+  margin-right: 15px;
+  float: left;
+  cursor: pointer;
+}
+.friend_link .link ul li:hover{
+ color: #258fe6;
+}    
+.friend_link .link span{
+  font-size: 12px;
+  color: #4a4a4a;
+  float: right;
+}
+/* 底部 */
+.footer{
+  width: 1000px;
+  height: 60px;
+  margin: auto;
+}
+.foot_left{
+  height: 100%;
+  float: left;
+}
+.foot_left ul{
+  list-style: none;
+}
+.foot_left ul li{
+  font-size: 12px;
+  color: #4a4a4a;
+  margin-right: 30px;
+  float: left;
+  line-height: 60px;
+  cursor: pointer;
+}
+.foot_left ul li:hover{
+ color: #258fe6;
+} 
+.foot_left ul li span{
+  color: rgb(204, 204, 204);
+}
+.foot_right{
+  height: 100%;
+  float: right;
+
+}
+.foot_right p{
+  font-size: 12px;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+.foot_right p:hover{
+  color: #258fe6;
+}
+.foot_right p:nth-child(1){
+  margin-top: 17px;
+  text-align: right;
+}
+.foot_right p:nth-child(2){
+  display: flex;
+}
+.foot_right p:nth-child(2) img{
+  margin-right: 4px;
 }
 </style>
