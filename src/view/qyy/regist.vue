@@ -20,13 +20,8 @@
         ref="registFormRef"
       >
         <!-- 手机号 -->
-        <el-form-item prop="phone">
-          <el-input v-model="registForm.phone" placeholder="请输入手机号"></el-input>
-        </el-form-item>
-        <!-- 验证码 -->
-        <el-form-item prop="captcha">
-          <el-input v-model="registForm.captcha" class="regist_captcha" placeholder="短信验证码"></el-input>
-          <el-button type="info">获取验证码</el-button>
+        <el-form-item prop="email">
+          <el-input v-model="registForm.phone" placeholder="请输入邮箱"></el-input>
         </el-form-item>
         <!-- 创建密码-->
         <el-form-item prop="checkpass">
@@ -36,10 +31,6 @@
         <el-form-item prop="pass">
           <el-input v-model="registForm.pass" type="password" placeholder="确认密码"></el-input>
         </el-form-item>
-        <!-- 协议 -->
-        <!-- <el-form-item>
-        <el-radio v-model="radio" label="1">备选项</el-radio>
-        </el-form-item>-->
         <!-- 注册 -->
         <el-form-item class="btn">
           <el-button type="primary">注册</el-button>
@@ -92,13 +83,12 @@ export default {
         phone: "",
         checkpass: "",
         pass: "",
-        captcha: ""
       },
       //表单验证
       registFormRules: {
         //用户名
-        phone: [
-          { required: true, message: "请输入手机号码", trigger: "blur" },
+        email: [
+          { required: true, message: "请输入正确的邮箱", trigger: "blur" },
           // {validator:function(rule,value,callback){
           //     if(/^1[34578]\d{9}$/.test(value) == false){
           //         callback(new Error("请输入正确的手机号"));
@@ -107,9 +97,9 @@ export default {
           //     }
           // }, trigger: 'blur'},
           {
-            pattern: /^1[34578]\d{9}$/,
+            pattern: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
             trigger: "blur",
-            message: "请输入正确的手机号"
+            message: "请输入正确的邮箱号"
           }
         ],
         //设置密码
