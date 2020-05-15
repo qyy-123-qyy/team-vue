@@ -51,8 +51,8 @@
           <el-form-item prop="checkpass">
             <el-input type="password" v-model="resetpwForm.checkpass" placeholder="重置密码"></el-input>
           </el-form-item>
-          <el-form-item prop="Pass">
-            <el-input type="password" v-model="resetpwForm.Pass" placeholder="确认密码"></el-input>
+          <el-form-item prop="pass">
+            <el-input type="password" v-model="resetpwForm.pass" placeholder="确认密码"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button class="primary" type="primary">确认</el-button>
@@ -112,16 +112,16 @@ export default {
       ],
      resetpwForm: {
         pass: "",
-        checkPass: ""
+        checkpass: ""
       },
       resetpwFormRules: {
         //设置密码
         checkpass: [
           { validator: validatePass, trigger: "blur" }
-          // { min:6, max: 10, message: '长度在 6 到 10 个字', trigger: 'blur'},
         ],
         //确认密码
-        pass: [{ validator: validatePass2, trigger: "blur" }]
+        pass: [{ validator: validatePass2, trigger: "blur" },
+        ]
       }
         
     };
