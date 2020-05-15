@@ -8,6 +8,7 @@ import xuqiu from '@/view/fjl/xuqiu'
 import xiangqing2 from '@/view/fjl/xiangqing2'
 import dlist from '@/view/fjl/dlist'
 import yunduan from '@/view/fjl/yunduan'
+import qianyue from '@/view/fjl/qianyue'
 Vue.use(Router)
 
 export default new Router({
@@ -57,6 +58,11 @@ export default new Router({
       path: '/yunduan',
       name: 'yunduan',
       component:yunduan
+    },
+    {
+      path: '/qianyue',
+      name: 'qianyue',
+      component:qianyue
     }
   ]
 })
