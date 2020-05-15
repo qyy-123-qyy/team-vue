@@ -51,7 +51,7 @@ export default {
        proAll(){
            //跳转后的页面代码
         let self=this;          
-          this.$axios.post("/wb/excellent",{user_email: this.getDta}).then(function(res){
+          this.$axios.post("/wb/programmer/detailed/message",{user_email: this.getDta}).then(function(res){
               console.log(res);
               self.proList=res.data.data.showExcellent;
               console.log(self.proList);

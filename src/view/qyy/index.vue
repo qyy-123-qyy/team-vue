@@ -127,6 +127,7 @@
     </div>
  <!-- 程序员 -->
     <div class="item item_two">
+       <h3>优秀程序员</h3>
       <div class="cxy_box" v-for="(item,index) in cxyList" :key="index" @click="jumpdetail(item.user_email)">
        <div class="img_box"> <img :src="item.user_avatar"></div>
     <p>姓名：{{item.user_name}}</p>
@@ -321,7 +322,7 @@ export default {
         let self=this;          
           this.$axios.post("/wb/excellent").then(function(res){
               console.log(res);
-              self.cxyList=res.data.data.showExcellentAvatar;
+              self.cxyList=res.data.data.showExcellent;
               console.log(self.cxyList);
           })
          },
@@ -452,7 +453,7 @@ margin:80px 394px;
 /* 开发服务方案 */
 .item{
   width: 1004px;
-  height: 600px;
+  /* height: 600px; */
   margin:50px auto;
 }
 .item>h3{

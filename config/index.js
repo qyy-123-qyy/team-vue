@@ -19,10 +19,10 @@ module.exports = {
        }
     },
     "/wb":{
-      target:'http://192.168.1.100:9999',
+      target:'http://192.168.1.112:9999',
       changeOrigin:true,//是否跨域，true为是
       pathRewrite:{
-        '^/wb':'http://192.168.1.100:9999',
+        '^/wb':'http://192.168.1.112:9999',
       }
    },
   },
