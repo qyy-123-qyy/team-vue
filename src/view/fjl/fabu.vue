@@ -6,7 +6,7 @@
         <div class="publish-hd">
           <i></i>
           发布云端工作岗位 
-          <a href="/" target="_blank" style="color: #258fe6;text-decoration: none">(了解更多)</a>
+          <a href="javascript;" target="_blank" style="color: #258fe6;text-decoration: none">(了解更多)</a>
         </div>
         <el-form :model="demand" :rules="rules" ref="demandForm" label-position="top" class="demo-ruleForm">
           <el-form-item label="开发职位类型 " prop="demandName">
@@ -37,17 +37,42 @@
             <el-input type="textarea" :rows="6" placeholder="请描述需要开发者日常完成的开发内容，越详细越有助于我们对接口合适的开发者接单" v-model="demand.demandDetail"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-upload  class="upload-demo"  ref="upload" action  :http-request="fileupload">
-                  <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-                  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-                </el-upload> 
+             <el-upload
+                class="upload-demo"
+                drag
+                action="https://jsonplaceholder.typicode.com/posts/"
+                multiple>
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+              </el-upload>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm()">立即发布</el-button>
-            <el-button @click="resetForm('demandForm')">重置</el-button>
+              <el-radio v-model="radio" label="1"><b>试用7天（试用期免押金，满意后再正式合作）</b></el-radio>
+               <el-radio v-model="radio" label="2"><b>需要开发票（税率9.36%）</b></el-radio>
+          </el-form-item>
+          <el-form-item>
+              <b>发布驻场招聘     </b>
+               <el-radio v-model="radio" label="1-1"><b>需要</b></el-radio>
+               <el-radio v-model="radio" label="2-2"><b>不需要</b></el-radio>
+          </el-form-item>
+          <el-form-item>
+            <div class="tishi">
+            <p>温馨提示</p>
+            <p>1.云端工作的协作方式，包括远程、驻场两种工作方式；</p>
+            <p>2、云端工作收费：服务费率为每月薪资的6%，如需开票另收税费9.36%；</p>
+            <p>3、发布云端工作，即代表您同意
+              <a href="javascript;">《程序员客栈服务协议》</a>
+              <a href="javascript;">《程序员客栈工作规则》</a></p>
+             </div>
+          </el-form-item>
+          <el-form-item>
+            <div class="tt">
+              <a href="javascript;" class="qx">取消</a>
+              <a href="/xuqiu" class="fb">发布需求</a>
+            </div>
           </el-form-item>
         </el-form>
-            
       </el-col>
     </el-row>
   </div>
@@ -104,5 +129,45 @@ export default {
     width: 40px;
     height: 53px;
     background: url(../../assets/img/medal.png);
-}
+  }
+  .tishi{
+    line-height: 6px;
+  }
+  .tishi a{
+    text-decoration: none;
+    color:#308eff ;
+  }
+  .qx {
+    text-decoration: none;
+    display: block;
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+
+  }
+  .fb {
+    text-decoration: none;
+    display: block;
+    float: right;
+    margin-right: 300px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    color: white;
+    background-color: #308eff;
+
+  }
 </style>

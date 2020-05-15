@@ -7,6 +7,7 @@ import fabu from '@/view/fjl/fabu'
 import xuqiu from '@/view/fjl/xuqiu'
 import xiangqing2 from '@/view/fjl/xiangqing2'
 import dlist from '@/view/fjl/dlist'
+import yunduan from '@/view/fjl/yunduan'
 Vue.use(Router)
 
 export default new Router({
@@ -51,6 +52,11 @@ export default new Router({
       path: '/dlist',
       name: 'dlist',
       component:dlist
+    },
+    {
+      path: '/yunduan',
+      name: 'yunduan',
+      component:yunduan
     }
   ]
 })

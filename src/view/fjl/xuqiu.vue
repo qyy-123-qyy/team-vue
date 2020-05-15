@@ -29,7 +29,7 @@
             <p>1、请提供详细的项目资料，以便于我们为您推荐合适的开发者</p>
             <p>2、整包项目收费标准：报价含14%的平台服务费，如需开票另收税费9.36%</p>
             <p>3、项目发布之后，客栈工作人员将在半个工作日内联系您</p>
-          </div>
+        </div>
         <el-form :model="demand" :rules="rules" ref="demandForm" label-position="top" class="demo-ruleForm">
           <el-form-item label="第一步：项目名称 " prop="demandName">
             <el-input v-model="demand.demandName" placeholder="请输入项目名称"></el-input>
