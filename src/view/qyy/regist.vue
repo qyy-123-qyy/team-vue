@@ -19,21 +19,40 @@
         :rules="registFormRules"
         ref="registFormRef"
       >
-        <!-- 邮箱 -->
+        <!-- 手机号 -->
         <el-form-item prop="email">
-          <el-input v-model="registForm.phone" placeholder="请输入邮箱"></el-input>
+          <el-input v-model="registForm.email" placeholder="请输入邮箱" @blur="yx"></el-input>
+        </el-form-item>
+        <!-- 验证码 -->
+        <el-form-item prop="captcha">
+          <el-input v-model="registForm.captcha" class="regist_captcha" placeholder="短信验证码"></el-input>
+          <el-button type="info" @click="getcode">获取验证码</el-button>
+        </el-form-item>
+        <!-- 用户名 -->
+        <el-form-item prop="userName">
+          <el-input v-model="registForm.userName" placeholder="用户名"></el-input>
         </el-form-item>
         <!-- 创建密码-->
-        <el-form-item prop="checkpass">
+         <el-form-item prop="checkpass">
           <el-input v-model="registForm.checkpass" type="password" placeholder="设置密码"></el-input>
         </el-form-item>
         <!-- 确认密码 -->
         <el-form-item prop="pass">
           <el-input v-model="registForm.pass" type="password" placeholder="确认密码"></el-input>
         </el-form-item>
+         <el-form-item >
+            <el-radio-group v-model="registForm.role">
+              <el-radio :label="0">开发方</el-radio>
+              <el-radio :label="1">需求方</el-radio>
+            </el-radio-group>
+          </el-form-item>
+        <!-- 协议 -->
+        <!-- <el-form-item>
+        <el-radio v-model="radio" label="1">备选项</el-radio>
+        </el-form-item>-->
         <!-- 注册 -->
         <el-form-item class="btn">
-          <el-button type="primary">注册</el-button>
+          <el-button type="primary" @click="zhuce">注册</el-button>
           <el-button type="info" @click="resetRegistForm">重置</el-button>
         </el-form-item>
       </el-form>
@@ -67,12 +86,23 @@ export default {
         callback();
       }
     };
+    // var validateEmail = (rule, value, callback) => {
+    //   if(value === "code:20000") {
+    //     callback("邮箱可用");
+    //   }else{
+    //      callback(new Error("邮箱不可用"));
+    //   }
+    //   console.log(value);
+    // };
     return {
       //登录表单数据对象
       registForm: {
-        phone: "",
+        email: "",
         checkpass: "",
         pass: "",
+        captcha: "",
+        role:0,
+        userName:""
       },
       //表单验证
       registFormRules: {
@@ -86,11 +116,11 @@ export default {
           //         callback();
           //     }
           // }, trigger: 'blur'},
-          {
-            pattern: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
-            trigger: "blur",
-            message: "请输入正确的邮箱号"
-          }
+          // {
+          //   pattern: /^1[34578]\d{9}$/,
+          //   trigger: "blur",
+          //   message: "请输入正确的手机号"
+          // }
         ],
         //设置密码
         checkpass: [
@@ -110,6 +140,33 @@ export default {
     },
     go() {
       this.$router.push("/login");
+    },
+    getcode(){
+      this.$axios.post('/api/user/sendEmail',{
+        userEmail:this.registForm.email
+      }).then(res=>{
+        console.log(res);
+      })
+    },
+    zhuce(){
+      console.log(this.registForm.role)
+      this.$axios.post('/api/user/register',{
+        userEmail:this.registForm.email,
+        userName:this.registForm.userName,
+        userPassword:this.registForm.pass,
+        userRole:this.registForm.role,
+        yzm:this.registForm.captcha,
+        i:this.registForm.role
+      }).then(res=>{
+        console.log(res);
+      })
+    },
+    yx(){
+      this.$axios.post('/api/user/cEmain',{
+        userEmail:this.registForm.email
+      }).then(res=>{
+        console.log(res);
+      })
     }
   }
 };

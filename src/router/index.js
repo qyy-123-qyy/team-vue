@@ -3,6 +3,12 @@ import Router from 'vue-router'
 import login from '@/view/qyy/login'
 import regist from '@/view/qyy/regist'
 import index from '@/view/qyy/index'
+import work_todo from '@/view/wt/work_todo'
+import work from '@/view/wt//work'
+import manage from '@/view/wt//manage'
+import credit from '@/view/wt//credit'
+import group from '@/view/wt//group'
+import account from '@/view/wt//account'
 import fabu from '@/view/fjl/fabu'
 import xuqiu from '@/view/fjl/xuqiu'
 import xiangqing2 from '@/view/fjl/xiangqing2'
@@ -46,11 +52,40 @@ export default new Router({
       component:index
     },
     {
+      path: '/work_todo',
+      name: 'work_todo',
+      component:work_todo
+    },
+    {
+      path: '/work',
+      name: 'work',
+      component:work
+    },
+    {
+      path: '/manage',
+      name: 'manage',
+      component:manage
+    },
+    {
+      path: '/credit',
+      name: 'credit',
+      component:credit
+    },
+    {
+      path: '/group',
+      name: 'group',
+      component:group
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component:account
+    },
+    {
       path: '/fabu',
       name: 'fabu',
       component:fabu
-    }
-    ,
+    },
     {
       path: '/xuqiu',
       name: 'xuqiu',
