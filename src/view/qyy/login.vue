@@ -78,6 +78,7 @@ export default {
                 console.log(res);
               })
              this.$router.push("/index");
+             window.localStorage.setItem(username, value)
 
             }else{
               this.$massage.error('登录失败')
