@@ -29,7 +29,8 @@
               <span>免费提供开发工期、报价评估服务</span>
             </div>
           </div>
-          <div class="more">了解详情</div>
+          <div class="more">发布需求</div>
+          <span class="know">了解详情</span>
         </div>
         <!-- 第二个 -->
         <div class="item_service item_service_two">
@@ -57,7 +58,8 @@
               </span>
             </div>
           </div>
-          <div class="more">了解详情</div>
+         <div class="more">发布需求</div>
+          <span class="know">了解详情</span>
         </div>
         <!-- 第三个 -->
         <div class="item_service">
@@ -85,7 +87,8 @@
               <span>每天提交日报，进度可控</span>
             </div>
           </div>
-          <div class="more">了解详情</div>
+          <div class="more">发布需求</div>
+          <span class="know">了解详情</span>
         </div>
       </div>
       <!-- 服务方案 -->
@@ -206,11 +209,6 @@ body {
 .item .item_service:hover .keyword {
   color: orange;
 }
-.item .item_service:hover .more {
-  background-color: #0075e0;
-  color: #fff;
-  border: none;
-}
 .item .item_service.item_service_two {
   margin: 0 20px;
 }
@@ -258,8 +256,16 @@ body {
   line-height: 30px;
   text-align: center;
   margin: 30px 0 0 93px;
+  background-color: #0075e0;
+  color: #fff;
 }
-
+.item .item_service .know{
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  display: block;
+  padding: 10px 0 0;
+}
 .compare{
     width: 950px;
     margin-top: 40px;
