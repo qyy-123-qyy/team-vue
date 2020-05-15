@@ -11,14 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api':{
-        target:"http://www.wumeili.top",
-        changeOrigin:true,
-        pathRewrite:{
-          '^/api':"http://www.wumeili.top"
-        }
-      }
-    },
+     "/api":{
+       target:'http://192.168.1.119:8080',
+       changeOrigin:true,//是否跨域，true为是
+       pathRewrite:{
+         '^/api':'http://192.168.1.119:8080',
+       }
+    }},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
