@@ -17,7 +17,15 @@ module.exports = {
        pathRewrite:{
          '^/api':'http://192.168.1.119:8080',
        }
-    }},
+    },
+    "/wb":{
+      target:'http://192.168.1.112:9999',
+      changeOrigin:true,//是否跨域，true为是
+      pathRewrite:{
+        '^/wb':'http://192.168.1.112:9999',
+      }
+   },
+  },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

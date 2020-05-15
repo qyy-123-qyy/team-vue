@@ -9,6 +9,13 @@ import xiangqing2 from '@/view/fjl/xiangqing2'
 import dlist from '@/view/fjl/dlist'
 import yunduan from '@/view/fjl/yunduan'
 import qianyue from '@/view/fjl/qianyue'
+import programmer from '@/view/qyy/programmer'
+import resetpw from '@/view/qyy/resetpw'
+import demand from '@/view/qyy/demand'
+
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/resetpw',
+      name: 'resetpw',
+      component:resetpw
     },
     {
       path: '/regist',
@@ -63,6 +75,15 @@ export default new Router({
       path: '/qianyue',
       name: 'qianyue',
       component:qianyue
-    }
+    },{
+      path: '/programmer',
+      name: 'programmer',
+      component:programmer
+    },
+    {
+      path: '/demand',
+      name: 'demand',
+      component:demand
+    },
   ]
 })

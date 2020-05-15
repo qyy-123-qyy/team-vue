@@ -21,7 +21,16 @@
                 </ol>               
               </li>
               <!-- 搜索 -->
-               <li> <el-input placeholder="请选择日期" suffix-icon="el-icon-serach" v-model="input" class="serach"></el-input></li>
+               <li> 
+               <div  class="serach el-input el-input--suffix">
+                 <input type="text" autocomplete="off" placeholder="搜索您感兴趣的程序员" class="el-input__inner serch"  v-model="val">
+                 <span class="el-input__suffix">
+                   <span class="el-input__suffix-inner">
+                   <i class="el-input__icon el-icon-search" @click="serch"></i>
+                 </span>
+                 </span>
+                 </div>
+               </li>
                <!-- 登录注册 -->
                <li class="login">登录</li>
               <li class="regist">免费注册</li>
@@ -43,7 +52,7 @@
         <!-- 第一个 -->
            <div class="item_service">
            <p class="bg">
-             <span class="image"><img src="../../assets/1-1.png"></span>
+             <span class="image"><img src="../../assets/index/1-1.png"></span>
              <span class="item_title">需求梳理</span>
            </p>
            <div class="secd">
@@ -65,7 +74,7 @@
            <!-- 第二个 -->
                 <div class="item_service item_service_two">
            <p class="bg bg_2">
-             <span class="image"><img src="../../assets/2-1.png"></span>
+             <span class="image"><img src="../../assets/index/2-1.png"></span>
              <span class="item_title">整包项目</span>
            </p>
            <div class="secd">
@@ -87,7 +96,7 @@
            <!-- 第三个 -->
                 <div class="item_service">
            <p class="bg bg_3">
-             <span class="image"><img src="../../assets/3-1.png"></span>
+             <span class="image"><img src="../../assets/index/3-1.png"></span>
              <span class="item_title">云端工作</span>
            </p>
            <div class="secd">
@@ -116,18 +125,15 @@
       </el-carousel-item>
     </el-carousel>
     </div>
- <!-- 客服 -->
+ <!-- 程序员 -->
     <div class="item item_two">
-      <h3>解决方案专属客服</h3>
-      <div class="contact_description">
-            专属客服通过您的开发需求，给你提供最合适的开发服务方案，提高问题解决效率。<br>
-            请填写真实信息，专属客服将在2个小时内联系您，程序员客栈不会将您的信息分享、售卖，或交给第三方公司。
-        </div>
-        <div class="contact_div">
-                <el-input v-model="input1" placeholder="请输入内容"></el-input>
-                <el-input v-model="input2" placeholder="请输入内容"></el-input>
-                 <el-button type="primary" round>主要按钮</el-button>
-        </div>
+       <h3>优秀程序员</h3>
+      <div class="cxy_box" v-for="(item,index) in cxyList" :key="index" @click="jumpdetail(item.user_email)">
+       <div class="img_box"> <img :src="item.user_avatar"></div>
+    <p>姓名：{{item.user_name}}</p>
+    <p>类型：{{item.user_role}}</p>
+    <p>邮箱号：{{item.user_email}}</p>
+      </div>
     </div>
     <!-- 会员 -->
     <div class="item ">
@@ -136,18 +142,18 @@
         <!-- 第一个 -->
             <div class="vip_box">
          <div class="vip">
-           <img src="../../assets/vip_title.png" alt="">
+           <img src="../../assets/index/vip_title.png" alt="">
          </div>
          <div class="vip_line"></div>
          <div class="vip_title">
            <p class="vip_com">
-             <img src="../../assets/vip_com.png" alt="">
+             <img src="../../assets/index/vip_com.png" alt="">
            </p>
            <span>需求优先</span>
          </div>
         <div class="vip_title vip_tex">
            <p class="vip_com ">
-               <img src="../../assets/zan.png" alt="">
+               <img src="../../assets/index/zan.png" alt="">
            </p>
            <span>最优技术人力解决方案</span>
          </div>
@@ -156,18 +162,18 @@
          <!-- 第二个 -->
       <div class="vip_box vip_mask">
          <div class="vip">
-           <img src="../../assets/vip_title1.png" alt="">
+           <img src="../../assets/index/vip_title1.png" alt="">
          </div>
          <div class="vip_line"></div>
          <div class="vip_title">
            <p class="vip_com">
-             <img src="../../assets/vip_com1.png" alt="">
+             <img src="../../assets/index/vip_com1.png" alt="">
            </p>
            <span>极速接单</span>
          </div>
         <div class="vip_title vip_tex1">
            <p class="vip_com ">
-               <img src="../../assets/chance.png" alt="">
+               <img src="../../assets/index/chance.png" alt="">
            </p>
            <span>更多接单机会</span>
          </div>
@@ -223,7 +229,7 @@
            <ul>
              <!-- 第一个 -->
              <li>
-               <div><img src="../../assets/cxy.png"></div>
+               <div><img src="../../assets/index/cxy.png"></div>
                <div class="success_content">
                 <p class="success_title">成功案例：AUSHEN TECHNOLOGY 整包项目</p>
                 <p class="price">¥147967</p>
@@ -233,7 +239,7 @@
              </li>
               <!-- 第二个 -->
              <li class="success_two">
-               <div><img src="../../assets/cxy2.png"></div>
+               <div><img src="../../assets/index/cxy2.png"></div>
                <div class="success_content">
                 <p class="success_title">成功案例：美国Storify.ai科技公司 云端工作</p>
                 <p class="price">¥70000</p>
@@ -243,7 +249,7 @@
              </li>
               <!-- 第三个 -->
              <li>
-               <div><img src="../../assets/cxy3.png"></div>
+               <div><img src="../../assets/index/cxy3.png"></div>
                <div class="success_content">
                 <p class="success_title">成功案例：光年实验室 云端工作</p>
                 <p class="price">¥10000</p>
@@ -262,100 +268,75 @@
         <p class="sign">申请签约接单</p>
       </div>
     </div>
-    <!-- 友情链接 -->
-    <div class="friend_link">
-       <img src="../../assets/logo_new.png">
-       <div class="link">
-         <h5>重点城市程序员兼职推荐</h5>
-         <div>
-           <ul>
-             <li>北京程序员兼职</li>
-             <li>上海程序员兼职</li>
-             <li>深圳程序员兼职</li>
-             <li>杭州程序员兼职</li>
-             <li>广州程序员兼职</li>
-             <li>成都程序员兼职</li>
-             <li>武汉程序员兼职</li>
-           </ul>
-      </div>
-      <span>更多</span>
-       </div>
-       <!-- 第二个 -->
-          <div class="link link_two">
-         <h5>重点岗位程序员兼职推荐</h5>
-         <div>
-           <ul>
-             <li>Java兼职</li>
-             <li>C++兼职</li>
-             <li>PHP兼职</li>
-             <li>C兼职</li>
-             <li>C#兼职</li>
-             <li>Python兼职</li>
-             <li>Ruby兼职</li>
-             <li>Node.js兼职</li>
-             <li>Android兼职</li>
-              <li>iOS兼职</li>
-             <li>前端兼职</li>
-           </ul>
-      </div>
-      <span>更多</span>
-       </div>
-    </div>
-    <!-- 底部 -->
-    <div class="footer">
-      <div class="foot_left">
-        <ul>
-          <li>App下载</li>
-          <li>帮助</li>
-          <li>关于我们</li>
-          <li>合作伙伴</li>
-          <li>意见反馈</li>
-          <li><span>@程序员客栈</span> 远程工作</li>
-        </ul>
-      </div>
-      <div class="foot_right">
-        <p>浙ICP备15029175号</p>
-        <p><img src="../../assets/badge.png">浙公网安备 33011002011566号</p>
-      </div>
-    </div>
+    <foot></foot>
     </div>
 </template>
 <script>
+import foot from "@/view/qyy/foot"
 export default {
     data(){
       return{
           input:'',
           input1:'',
           input2:'',
+          val:"",
           imgs:[
-            { src:require("../../assets/img1.jpg")},
-            { src:require("../../assets/img2.png")},
-            { src:require("../../assets/img3.png")},
-            { src:require("../../assets/img4.png")},
+            { src:require("../../assets/index/img1.jpg")},
+           { src:require("../../assets/index/img2.png")},
+            { src:require("../../assets/index/img3.png")},
+            { src:require("../../assets/index/img4.png")},
           ],
           datas:[
             {
-              img:require("../../assets/first.png"),
+              img:require("../../assets/index/first.png"),
               h3:"习惯近战平砍",
               h4:'2020-5-11',
               p:'做的很快，沟通也很好'
             },
             {
-              img:require("../../assets/sec.png"),
+              img:require("../../assets/index/sec.png"),
               h3:"chen1111",
               h4:'2020-5-11',
               p:'工作态度认真，能够提前完成任务，为人靠谱且耐心，可以细心讲解各个步骤，沟通过程中没有差错，有机会希望下次还可以再合作?'
             },
             {
-              img:require("../../assets/first.png"),
+              img:require("../../assets/index/first.png"),
               h3:"Sanmu",
               h4:'2020-5-11',
               p:'项目因为公司需求确认的原因耽误了很久，但是远程开发仍然在近期帮忙调试接口和bug，表示非常感谢，交付质量也高?'
             },
-          ]
+          ],
+          cxyList:[]
       }
+    },
+    components:{
+      foot,
+    },
+    created(){
+       this.dataAll();
+          
+    },
+    methods:{
+        //获取程序员接口
+            dataAll(){
+        let self=this;          
+          this.$axios.post("/wb/excellent").then(function(res){
+              console.log(res);
+              self.cxyList=res.data.data.showExcellent;
+              console.log(self.cxyList);
+          })
+         },
+         //跳转程序员详情传参
+         jumpdetail(m){
+           this.$router.push("/programmer?info="+m)
+         },
+         //模糊查询
+         serch(){
+           console.log(this.val)
+         }
+        }
     }
-}
+
 </script>
 <style scoped>
 *{
@@ -366,7 +347,7 @@ export default {
 .index_contanier{
   width: 100%;
   height:580px;
-  background-image: url(../../assets/top-banner-5.jpg)
+  background-image: url(../../assets/index/top-banner-5.jpg)
 }
 .contanier{
     width: 1140px;
@@ -383,7 +364,7 @@ export default {
 width: 160px;
 height:45px;
 margin-top:17.5px;
-background-image: url(../../assets/logo.png);
+background-image: url(../../assets/index/logo.png);
 background-repeat: no-repeat;
 background-size: 160px 45px;
 }
@@ -423,9 +404,9 @@ background-size: 160px 45px;
   color: #333;
   cursor: pointer;
 }
-.serach{
+.serch{
   width:300px;
-  margin-left: 50px;
+  padding-left: 10px;
   margin-top: -5px;
 }
 .login{
@@ -439,6 +420,7 @@ background-size: 160px 45px;
 }
 .sub-title{
  color: #fff;
+
   font-size: 24px;
   text-align: center;
   margin-top:40px;
@@ -471,7 +453,7 @@ margin:80px 394px;
 /* 开发服务方案 */
 .item{
   width: 1004px;
-  height: 600px;
+  /* height: 600px; */
   margin:50px auto;
 }
 .item>h3{
@@ -519,15 +501,15 @@ margin:80px 394px;
   margin: 0 40px;
 }
 .item .item_service .bg{
-  background-image: url(../../assets/1.png);
+  background-image: url(../../assets/index/1.png);
   width: 308px;
   height: 194px;
 }
 .item .item_service .bg.bg_2{
-  background-image: url(../../assets/2.png); 
+  background-image: url(../../assets/index/2.png); 
 }
 .item .item_service .bg.bg_3{
-  background-image: url(../../assets/3.png); 
+  background-image: url(../../assets/index/3.png); 
 }
 .item .item_service .bg .image{
   display:block;
@@ -583,46 +565,44 @@ display: block;
   width: 1000px;
   height: 280px;
 }
-/* 客服 */
+/* 程序员 */
 .item_two{
-  height: 350px;
+  width: 966px;
 }
-.contact_description{
-  text-align: center;
-  height: 40px;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(145,154,167,1);
-  line-height:25px;
-  margin-bottom: 30px;
-}
-.contact_div{
-  height: 170px;
+.cxy_box{
   width: 300px;
-  padding-left: 10px;
-  margin: auto;
-  margin-top: 50px;
+  border: 1px solid #eee;
+  display: inline-block;
+  margin:0 20px 20px 0;
+  padding: 40px 0;
 }
-.contact_div .el-input{
-  height: 50px;
+.cxy_box .img_box{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 100px 20px;
+  overflow: hidden;
 }
-.contact_div .el-button{
-  width: 160px;
-  height: 40px;
-  border-radius: 20px;
-  margin: 20px 69px;
+.cxy_box img{
+  width: 100px;
+  height: 100px;
+}
+.cxy_box p{
+  line-height: 30px;
+  color: #666;
+  text-align: center;
 }
 /* 会员 */
 .vip_box{
   width: 414px;
   height: 440px;
-  background-image: url(../../assets/vip.png);
+  background-image: url(../../assets/index/vip.png);
   background-size: 414px 440px;
   background-repeat: no-repeat; 
   padding:10px 10px;
 }
 .vip_box.vip_mask{
-    background-image: url(../../assets/vip_mask.png);
+    background-image: url(../../assets/index/vip_mask.png);
       margin: 0 0 0 20px;
 }
 .vip{
@@ -871,7 +851,7 @@ display: block;
 }
 .free_box{
   height:200px;
-  background-image: url(../../assets/bg.png);
+  background-image: url(../../assets/index/bg.png);
   width: 100%;
   background-size: 100% 200px;
   background-color: #189df6;
@@ -907,99 +887,28 @@ display: block;
 .free_box p.sign:hover{
   background-color: #0075E0;
 }
-/* 友情链接 */
-.friend_link{
-  width: 1000px;
-  height: 126px;
-  margin: auto;
-  padding: 50px 0 20px;
-}
-.friend_link img{
-  width: 115px;
-  height: 38px;
-  float: left;
-}
-.friend_link .link{
-  width: 790px;
-  float: left;
-  padding-left: 95px;
-}
-.friend_link .link.link_two{
-  margin-left: 115px;
-  margin-top: 10px;
-}
-.friend_link .link h5{
-  color: #4a4a4a;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-.friend_link .link ul{
-  list-style: none;
-}
-.friend_link .link ul li{
-  font-size: 12px;
-  color: #4a4a4a;
-  margin-bottom: 12px;
-  margin-right: 15px;
-  float: left;
-  cursor: pointer;
-}
-.friend_link .link ul li:hover{
- color: #258fe6;
-}    
-.friend_link .link span{
-  font-size: 12px;
-  color: #4a4a4a;
-  float: right;
-}
-/* 底部 */
-.footer{
-  width: 1000px;
-  height: 60px;
-  margin: auto;
-}
-.foot_left{
-  height: 100%;
-  float: left;
-}
-.foot_left ul{
-  list-style: none;
-}
-.foot_left ul li{
-  font-size: 12px;
-  color: #4a4a4a;
-  margin-right: 30px;
-  float: left;
-  line-height: 60px;
-  cursor: pointer;
-}
-.foot_left ul li:hover{
- color: #258fe6;
-} 
-.foot_left ul li span{
-  color: rgb(204, 204, 204);
-}
-.foot_right{
-  height: 100%;
-  float: right;
-
-}
-.foot_right p{
-  font-size: 12px;
-  color: #4a4a4a;
-  cursor: pointer;
-}
-.foot_right p:hover{
-  color: #258fe6;
-}
-.foot_right p:nth-child(1){
-  margin-top: 17px;
-  text-align: right;
-}
-.foot_right p:nth-child(2){
-  display: flex;
-}
-.foot_right p:nth-child(2) img{
-  margin-right: 4px;
-}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -27,11 +27,12 @@
         <el-form-item prop="password">
           <el-input v-model="loginForm.password" type="password" placeholder="请输入密码"></el-input>
         </el-form-item>
-        <!-- 按钮 -->
-        <el-form-item class="btn">
+        <!-- 按钮 -->  
+          <span class="forget" @click="forget">忘记密码?</span>
+           <el-form-item class="btn">     
           <el-button type="primary" @click="login(loginForm)">登录</el-button>
           <el-button type="info" @click="resetLoginForm">重置</el-button>
-        </el-form-item>
+        </el-form-item> 
       </el-form>
     </div>
   </div>
@@ -49,7 +50,7 @@ export default {
       loginFormRules: {
         //用户名
         username: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
+          { required: true, message: "请输入邮箱", trigger: "blur" },
         ],
         //密码
         password: [
@@ -76,15 +77,16 @@ export default {
               }).then(res=>{
                 console.log(res);
               })
-      this.$router.push("/index");
+             this.$router.push("/index");
 
             }else{
               this.$massage.error('登录失败')
             }
-          //  const result=this.$axios.post("login",this.loginForm);
-          //  console.log(result)
         })
-    }
+    },
+    forget(){
+             this.$router.push("/resetpw");
+    },
   }
 };
 </script>
@@ -142,7 +144,11 @@ export default {
   margin: 60px auto;
 }
 .btn {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
+  margin-left: 69px;
+}
+.forget{
+  cursor: pointer;
+  color: #999;
 }
 </style>
