@@ -7,7 +7,7 @@
         <span class="tips">尊敬的用户，欢迎您回来!</span>
         <span class="account" @click="goin">
           还没有账号，
-          <font color="red">去注册</font>
+          <font color="#0075E0">去注册</font>
         </span>
       </div>
 
@@ -27,11 +27,12 @@
         <el-form-item prop="password">
           <el-input v-model="loginForm.password" type="password" placeholder="请输入密码"></el-input>
         </el-form-item>
-        <!-- 按钮 -->
-        <el-form-item class="btn">
-          <el-button type="primary" @click="login">登录</el-button>
+        <!-- 按钮 -->  
+          <span class="forget" @click="forget">忘记密码?</span>
+           <el-form-item class="btn">     
+          <el-button type="primary" @click="login(loginForm)">登录</el-button>
           <el-button type="info" @click="resetLoginForm">重置</el-button>
-        </el-form-item>
+        </el-form-item> 
       </el-form>
     </div>
   </div>
@@ -49,14 +50,11 @@ export default {
       loginFormRules: {
         //用户名
         username: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
-          // { min: 3, max: 10, message: "长度在 6 到 10 个字", trigger: "blur" }
-          //    {patter:'/((^[1-9]\d*)|^0)(\.\d{0,2}){0,1}$/', message: '长度在 6 到 10 个字', trigger: 'blur' }
+          { required: true, message: "请输入邮箱", trigger: "blur" },
         ],
         //密码
         password: [
           { required: true, message: "请输入密码", trigger: "blur" },
-          // { min: 6, max: 10, message: "长度在 6 到 10 个字", trigger: "blur" }
         ]
       }
     };
@@ -69,14 +67,26 @@ export default {
     goin() {
       this.$router.push("/regist");
     },
-    login(){
+    login(formName){
         this.$refs.loginFormRef.validate(valid=>{
-            // console.log(valid)
-            if(!valid)return;
-          //  const result=this.$axios.post("login",this.loginForm);
-          //  console.log(result)
+            console.log(valid)
+            if(valid){
+              this.$axios.post("/api/user/login",{
+                userEmail:this.loginForm.username,
+                userPassword:this.loginForm.password,
+              }).then(res=>{
+                console.log(res);
+              })
+             this.$router.push("/index");
+
+            }else{
+              this.$massage.error('登录失败')
+            }
         })
-    }
+    },
+    forget(){
+             this.$router.push("/resetpw");
+    },
   }
 };
 </script>
@@ -109,7 +119,7 @@ export default {
   padding: 20px 10px;
 }
 .vip .hd {
-  color: #ff4466;
+  color: #289EFF;
   font-size: 18px;
 }
 .vip .tips {
@@ -134,7 +144,11 @@ export default {
   margin: 60px auto;
 }
 .btn {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
+  margin-left: 69px;
+}
+.forget{
+  cursor: pointer;
+  color: #999;
 }
 </style>

@@ -9,17 +9,23 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
-        proxyTable: {
-            '/api': {
-                target: 'http://192.168.0.109:8080/', //协议域名 端口域名
-                //secure:false,//如果协议是https，需要配置这个参数
-                changeOrigin: true, //是否跨域
-                pathRewrite: {
-                    '^/api': 'http://192.168.0.109:8080/'
-                }
-            }
-        },
+    assetsPublicPath: '/',
+    proxyTable: {
+     "/api":{
+       target:'http://192.168.1.119:8080',
+       changeOrigin:true,//是否跨域，true为是
+       pathRewrite:{
+         '^/api':'http://192.168.1.119:8080',
+       }
+    },
+    "/wb":{
+      target:'http://192.168.1.112:9999',
+      changeOrigin:true,//是否跨域，true为是
+      pathRewrite:{
+        '^/wb':'http://192.168.1.112:9999',
+      }
+   },
+  },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

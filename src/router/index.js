@@ -9,6 +9,18 @@ import manage from '@/view/wt//manage'
 import credit from '@/view/wt//credit'
 import group from '@/view/wt//group'
 import account from '@/view/wt//account'
+import fabu from '@/view/fjl/fabu'
+import xuqiu from '@/view/fjl/xuqiu'
+import xiangqing2 from '@/view/fjl/xiangqing2'
+import dlist from '@/view/fjl/dlist'
+import yunduan from '@/view/fjl/yunduan'
+import qianyue from '@/view/fjl/qianyue'
+import programmer from '@/view/qyy/programmer'
+import resetpw from '@/view/qyy/resetpw'
+import demand from '@/view/qyy/demand'
+
+
+
 
 Vue.use(Router)
 
@@ -23,6 +35,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/resetpw',
+      name: 'resetpw',
+      component:resetpw
     },
     {
       path: '/regist',
@@ -63,6 +80,45 @@ export default new Router({
       path: '/account',
       name: 'account',
       component:account
+    },
+    {
+      path: '/fabu',
+      name: 'fabu',
+      component:fabu
+    },
+    {
+      path: '/xuqiu',
+      name: 'xuqiu',
+      component:xuqiu
+    } ,
+    {
+      path: '/xiangqing2',
+      name: 'xiangqing2',
+      component:xiangqing2
+    },
+    {
+      path: '/dlist',
+      name: 'dlist',
+      component:dlist
+    },
+    {
+      path: '/yunduan',
+      name: 'yunduan',
+      component:yunduan
+    },
+    {
+      path: '/qianyue',
+      name: 'qianyue',
+      component:qianyue
+    },{
+      path: '/programmer',
+      name: 'programmer',
+      component:programmer
+    },
+    {
+      path: '/demand',
+      name: 'demand',
+      component:demand
     },
   ]
 })

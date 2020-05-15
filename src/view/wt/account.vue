@@ -217,4 +217,10 @@ export default {
         position: absolute;
         display: block;
     }
+    .info_rt_down{
+        padding: 15px;
+        border: 1px solid #eee;
+        background-color: #fff;
+        margin-top: 10px;
+    }
 </style>

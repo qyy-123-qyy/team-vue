@@ -7,7 +7,7 @@
         <span class="tips">尊敬的用户，欢迎您注册!</span>
         <span class="account" @click="go">
           已有账号，
-          <font color="red">去登录</font>
+          <font color="#0075E0">去登录</font>
         </span>
       </div>
 
@@ -63,16 +63,6 @@
 export default {
   data() {
     //设置密码
-    /*  var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请输入密码'));
-        } else {
-          if (this.registForm.pass !== '') {
-            this.$refs.registFormRef.validateField('checkpass');
-          }
-          callback();
-        }
-      }; */
     var validatePass = (rule, value, callback) => {
       const reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
       if (value === "") {
@@ -117,8 +107,8 @@ export default {
       //表单验证
       registFormRules: {
         //用户名
-        phone: [
-          { required: true, message: "请输入手机号码", trigger: "blur" },
+        email: [
+          { required: true, message: "请输入正确的邮箱", trigger: "blur" },
           // {validator:function(rule,value,callback){
           //     if(/^1[34578]\d{9}$/.test(value) == false){
           //         callback(new Error("请输入正确的手机号"));
@@ -210,7 +200,7 @@ export default {
   padding: 20px 10px;
 }
 .vip .hd {
-  color: #ff4466;
+  color: #289EFF;
   font-size: 18px;
 }
 .vip .tips {
