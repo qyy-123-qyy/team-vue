@@ -19,7 +19,7 @@
         :rules="registFormRules"
         ref="registFormRef"
       >
-        <!-- 手机号 -->
+        <!-- 邮箱 -->
         <el-form-item prop="email">
           <el-input v-model="registForm.phone" placeholder="请输入邮箱"></el-input>
         </el-form-item>
@@ -44,16 +44,6 @@
 export default {
   data() {
     //设置密码
-    /*  var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请输入密码'));
-        } else {
-          if (this.registForm.pass !== '') {
-            this.$refs.registFormRef.validateField('checkpass');
-          }
-          callback();
-        }
-      }; */
     var validatePass = (rule, value, callback) => {
       const reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
       if (value === "") {
