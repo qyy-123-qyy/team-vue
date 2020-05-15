@@ -50,13 +50,13 @@ export default {
         //用户名
         username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
-          { min: 3, max: 10, message: "长度在 6 到 10 个字", trigger: "blur" }
+          // { min: 3, max: 10, message: "长度在 6 到 10 个字", trigger: "blur" }
           //    {patter:'/((^[1-9]\d*)|^0)(\.\d{0,2}){0,1}$/', message: '长度在 6 到 10 个字', trigger: 'blur' }
         ],
         //密码
         password: [
           { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 6, max: 10, message: "长度在 6 到 10 个字", trigger: "blur" }
+          // { min: 6, max: 10, message: "长度在 6 到 10 个字", trigger: "blur" }
         ]
       }
     };
