@@ -257,9 +257,12 @@
         </el-button>
       </el-col>
     </el-row>
+    <foot></foot>
   </div>
 </template>
+
 <script>
+import foot from "@/view/qyy/foot";
   export default {
     data() {
       return {
@@ -303,6 +306,9 @@
           ],
         }
       };
+    },
+    components: {
+    foot
     },
     methods: {
        

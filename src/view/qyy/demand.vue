@@ -29,8 +29,8 @@
               <span>免费提供开发工期、报价评估服务</span>
             </div>
           </div>
-          <div class="more">发布需求</div>
-          <span class="know">了解详情</span>
+          <div class="more" @click="fb1">发布需求</div>
+          <span class="know" @click="xq">了解详情</span>
         </div>
         <!-- 第二个 -->
         <div class="item_service item_service_two">
@@ -58,8 +58,8 @@
               </span>
             </div>
           </div>
-         <div class="more">发布需求</div>
-          <span class="know">了解详情</span>
+         <div class="more" @click="fb1">发布需求</div>
+          <span class="know" @click="xq">了解详情</span>
         </div>
         <!-- 第三个 -->
         <div class="item_service">
@@ -87,8 +87,8 @@
               <span>每天提交日报，进度可控</span>
             </div>
           </div>
-          <div class="more">发布需求</div>
-          <span class="know">了解详情</span>
+          <div class="more" @click="fb2">发布需求</div>
+          <span class="know" @click="xq">了解详情</span>
         </div>
       </div>
       <!-- 服务方案 -->
@@ -155,6 +155,18 @@ export default {
       components:{
       foot,
     },
+     methods: {
+    //发布需求
+      fb1(){
+        this.$router.push("/xuqiu")
+      },
+       fb2(){
+        this.$router.push("/fabu")
+      },
+      xq(){
+        this.$router.push("/xiangqing2")
+      },
+    }
 };
 </script>
 <style>

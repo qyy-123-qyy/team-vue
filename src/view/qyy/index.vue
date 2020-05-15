@@ -61,7 +61,7 @@
       <p class="title">近43万优秀开发者 , 您的专属云端开发团队</p>
       <p class="sub-title">BAT级别的开发者 , 标准化的服务和交付</p>
       <div class="actions">
-        <button class="btn blue">免费发布需求</button>
+        <button class="btn blue" @click="blue">免费发布需求</button>
         <button class="btn light">申请签约订单</button>
       </div>
     </div>
@@ -370,6 +370,10 @@ export default {
     this.serchEnter();
   },
   methods: {
+    //发布需求
+    blue(){
+      this.$router.push("/demand")
+    },
     //获取程序员接口
     dataAll() {
       let self = this;
@@ -955,26 +959,3 @@ export default {
 }
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

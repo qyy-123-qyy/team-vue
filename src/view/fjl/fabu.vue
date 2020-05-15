@@ -59,7 +59,7 @@
           <el-form-item>
             <div class="tishi">
             <p>温馨提示</p>
-            <p>1.云端工作的协作方式，包括远程、驻场两种工作方式；</p>
+            <p>1、云端工作的协作方式，包括远程、驻场两种工作方式；</p>
             <p>2、云端工作收费：服务费率为每月薪资的6%，如需开票另收税费9.36%；</p>
             <p>3、发布云端工作，即代表您同意
               <a href="javascript;">《程序员客栈服务协议》</a>
@@ -131,7 +131,7 @@ export default {
     background: url(../../assets/img/medal.png);
   }
   .tishi{
-    line-height: 6px;
+    line-height: 20px;
   }
   .tishi a{
     text-decoration: none;
