@@ -216,7 +216,7 @@
                 <p>2、客栈提供费用托管担保，分阶段验收、结算； 如果开发者个人原因导致出现问题，平台有权采取扣减佣金、降权拉黑、扣除保证金等处罚措施。</p>
             </div>
         </div>
-        <el-col :span="24">
+        <!-- <el-col :span="24">
         <div class="bottom">
             <div class="links">
               <a href="javascript;" class="logo">
@@ -284,10 +284,20 @@
           </div>
         </div>
       </div>
-      </el-col>
+      </el-col> -->
+      
     </div>
+    <foot></foot>
     </div>
 </template>
+<script>
+import foot from "@/view/qyy/foot";
+export default {
+    components: {
+    foot
+  },
+}
+</script>
 <style>
     .index_nav{
   width: 160px;
@@ -367,7 +377,7 @@
     height: 70px;
     font-size: 32px;
     color: black;
-    line-height: 20px;
+    line-height: 30px;
     position: relative;
     text-align: center;
     padding-top: 60px;
@@ -664,7 +674,7 @@
       margin-right: 15px;
       color: #4a4a4a;
   }
-  .footer{
+  /* .footer{
     line-height: 60px;
     background: #fff;
   }
@@ -704,5 +714,5 @@
     height: 20px;
     line-height: 20px;
     margin: 0px 0px 0px 5px;
-  }
+  } */
 </style>
