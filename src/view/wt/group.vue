@@ -1,9 +1,11 @@
 <template>
     <div>
-        <div class="group">
+        <div class="group1">
             <h3 class="title">协作群组</h3>
             <span class="word">适用于云端工作团队共享、管理日报和工时统计等</span>
-            <el-button type="primary" class="cread">创建</el-button>
+            <a href="">
+                <el-button type="primary" class="cread">创建</el-button>
+            </a>
         </div>
     </div>
 </template>
@@ -13,7 +15,7 @@ export default {
 }
 </script>
 <style>
-    .group{
+    .group1{
         width: 830px;
         height: 400px;
         margin-left: 15px;

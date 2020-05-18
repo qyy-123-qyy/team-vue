@@ -31,6 +31,9 @@
                 <div v-if="step==4">
                     <account></account>
                 </div>
+                <div v-if="step==5">
+                    <setting></setting>
+                </div>
             </div>
         </div>
     </div>
@@ -41,13 +44,15 @@ import manage from './manage'
 import credit from './credit'
 import group from './group'
 import account from './account'
+import setting from './setting'
 export default {
     components:{
         work,
         manage,
         credit,
         group,
-        account
+        account,
+        setting
     },
     data() {
       return {

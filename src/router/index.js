@@ -9,6 +9,7 @@ import manage from '@/view/wt//manage'
 import credit from '@/view/wt//credit'
 import group from '@/view/wt//group'
 import account from '@/view/wt//account'
+import setting from '@/view/wt//setting'
 import fabu from '@/view/fjl/fabu'
 import xuqiu from '@/view/fjl/xuqiu'
 import xiangqing2 from '@/view/fjl/xiangqing2'
@@ -80,6 +81,11 @@ export default new Router({
       path: '/account',
       name: 'account',
       component:account
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component:setting
     },
     {
       path: '/fabu',

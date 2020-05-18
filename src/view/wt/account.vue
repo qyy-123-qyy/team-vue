@@ -31,29 +31,45 @@
                             <span>账户管理</span>
                             <a href="" class="edit">编辑</a>
                         </div>
-                        <p class="group name">
-                            <span>支付宝</span>
+                        <p class="group pay">
+                            <span class="name">支付宝</span>
                         </p>
                         <p class="group card">
-                            <span>银行卡</span>
+                            <span class="name">银行卡</span>
                         </p>
                     </div>
-                    <div class="info_rt_down">
+                    <div class="info_rt_top">
                         <div class="right_top">
                             <span>我的权益</span>
-                            <a href="" class="edit">查案</a>
+                            <a href="" class="edit">查看></a>
                         </div>
-                        <p class="group name">
-                            <span>积分</span>
+                        <p class="group intergroul">
+                            <span class="name">积分</span>
+                            <span class="txt">0分</span>
                         </p>
-                        <p class="group card">
-                            <span>现金劵</span>
+                        <p class="group money">
+                            <span class="name">现金劵</span>
+                            <span class="txt">0分</span>
                         </p>
                     </div>
                 </div>
             </div>
+            <div class="down_info">
+                <div class="title">收支记录</div>
+                <div class="stats">
+                    <div class="summary">
+                        <span class="desc">累计收入0.00元，服务0个项目，共计0个客户</span>
+                        <ul class="tab">
+                            <li class="on">我的收入</li>
+                            <li>我的支出</li>
+                        </ul>
+                    </div>
+                     <div style="height: 300px;">
+                        <div style="font-size: 20px;text-align: center; color: #999;">您暂时没有收入记录，祝早日赚到第一笔收入！</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
     </div>
 </template>
 <script>
@@ -174,7 +190,7 @@ export default {
         position: relative;
 
     }
-    .info_rt a{
+    .info_rt_top a{
         float: right;
         color: #258fe6;
     }
@@ -192,13 +208,19 @@ export default {
         position: relative;
         padding-left: 30px;
     }
+    .name{
+        display: inline-block;
+        width: 45px;
+    }
     p {
         margin: 0 0 1em;
         line-height: 1.33;
     }
-    .name::before{
+    p:last-child {
+        margin-bottom: 0;
+    }
+    .pay::before{
         background: url(../../assets/wt/icons.png) no-repeat;
-        /* background-size: contain; */
         left: 0;
         top: -2px;
         width: 22px;
@@ -208,7 +230,8 @@ export default {
         display: block;
     }
     .card::before{
-        background: url(../../assets/wt/icons.png) no-repeat;
+        background: url(../../assets/wt/card.png) no-repeat;
+        background-size: contain;
         left: 0;
         top: -2px;
         width: 22px;
@@ -217,10 +240,78 @@ export default {
         position: absolute;
         display: block;
     }
-    .info_rt_down{
-        padding: 15px;
+    .intergroul::before{
+        display: block;
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: -6px;
+        background: url(../../assets/wt/ji.png);
+        background-size: contain;
+        width: 28px;
+        height: 28px;
+    }
+    .money::before{
+        display: block;
+        content: '';
+        position: absolute;
+        left: -3px;
+        top: -2px;
+        background: url(../../assets/wt/money.png);
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+    }
+    .down_info{
+        padding-top: 10px;
+    }
+    .title{
+        padding-left: 30px;
+        padding-bottom: 10px;
+        font-size: 16px;
+        color: #666;
+    }
+    .stats{
+        padding: 25px;
         border: 1px solid #eee;
         background-color: #fff;
-        margin-top: 10px;
+    }
+    .summary{
+        overflow: hidden;
+        margin-bottom: 25px;
+        line-height: 28px;
+    }
+    .desc{
+        float: left;
+        color: #258fe6;
+        font-size: 18px;
+    }
+    .tab{
+        float: right;
+        overflow: hidden;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+    .summary .tab li.on {
+        background-color: #088ee3;
+        color: #fff;
+    }
+    .summary .tab li:first-child {
+        border-right: none;
+    }
+    .summary .tab li {
+        float: left;
+        width: 75px;
+        height: 28px;
+        line-height: 28px;
+        border: 1px solid #eee;
+        text-align: center;
+        color: #333;
+        cursor: pointer;
+    }
+    ul li {
+        list-style: none;
     }
 </style>
