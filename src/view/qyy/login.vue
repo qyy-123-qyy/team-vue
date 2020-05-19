@@ -71,15 +71,19 @@ export default {
         this.$refs.loginFormRef.validate(valid=>{
             console.log(valid)
             if(valid){
-              this.$axios.post("/api/user/login",{
-                userEmail:this.loginForm.username,
-                userPassword:this.loginForm.password,
-              }).then(res=>{
+              this.$axios.post("/api/enroll",{
+                user_email:this.loginForm.username,
+                user_password:this.loginForm.password,
+              }).then(res=>{2
                 console.log(res);
-              })
-             this.$router.push("/index");
-             window.localStorage.setItem(username, value)
+                if(res.data.code===200){
+                  // this.$axios.push("/index")
+                  console.log(this)
+                  let userObj=JSON.stringify(this.username)
+          window.sessionStorage.setItem("aa",userObj)
 
+                }
+              })
             }else{
               this.$massage.error('登录失败')
             }

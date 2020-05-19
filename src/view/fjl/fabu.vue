@@ -25,13 +25,16 @@
           <el-form-item label="语言技能要求" prop="demandBudget">
             <el-input v-model="demand.demandBudget" placeholder="如php\python\vue等，最多五项" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="每周工作时间 " prop="demandName">
-             <el-radio v-model="radio" label="1">12-18小时</el-radio>
-            <el-radio v-model="radio" label="2">18-24小时</el-radio>
-             <el-radio v-model="radio" label="3">24-30小时</el-radio>
-            <el-radio v-model="radio" label="4">30-36小时</el-radio>
+          <div>
+               <el-radio-group  v-model="radio1" label="每周工作时间 ">
+             <el-radio label="1">12-18小时</el-radio>
+            <el-radio  label="2">18-24小时</el-radio>
+             <el-radio  label="3">24-30小时</el-radio>
+            <el-radio  label="4">30-36小时</el-radio>
             <p style="font-size:12px;line-height: 2;color: gray;">具体时间安排，可与开发者协商，如：周一~周五每天工作4小时，周末每天工作2小时，每周累计24小时。</p>
-          </el-form-item>
+          </el-radio-group>
+          </div>
+       
           <div></div>
           <el-form-item label="工作说明" prop="demandDetail">
             <el-input type="textarea" :rows="6" placeholder="请描述需要开发者日常完成的开发内容，越详细越有助于我们对接口合适的开发者接单" v-model="demand.demandDetail"></el-input>
@@ -48,13 +51,13 @@
               </el-upload>
           </el-form-item>
           <el-form-item>
-              <el-radio v-model="radio" label="1"><b>试用7天（试用期免押金，满意后再正式合作）</b></el-radio>
-               <el-radio v-model="radio" label="2"><b>需要开发票（税率9.36%）</b></el-radio>
+              <el-radio v-model="radio2" label="1"><b>试用7天（试用期免押金，满意后再正式合作）</b></el-radio>
+               <el-radio v-model="radio2" label="2"><b>需要开发票（税率9.36%）</b></el-radio>
           </el-form-item>
           <el-form-item>
               <b>发布驻场招聘     </b>
-               <el-radio v-model="radio" label="1-1"><b>需要</b></el-radio>
-               <el-radio v-model="radio" label="2-2"><b>不需要</b></el-radio>
+               <el-radio v-model="radio3" label="1-1"><b>需要</b></el-radio>
+               <el-radio v-model="radio3" label="2-2"><b>不需要</b></el-radio>
           </el-form-item>
           <el-form-item>
             <div class="tishi">
@@ -84,10 +87,14 @@ export default {
   data() {
      return {
       radio:{
-          radio: '1'
+          radio: '1',
+          radio1: '1',
+          radio2: '1',
+          radio3: '1',
       },
       demand: {
         demandName: '',
+        demandTame: '',
         demandType: [],
         demandBudget: '',
         demandDetail: '',

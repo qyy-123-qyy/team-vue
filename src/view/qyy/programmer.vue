@@ -4,7 +4,7 @@
            <div class="main_left">
                <div class="main_left_top">
                 <div class="main_img"><img src="../../assets/index/1.png"></div>
-               <p class="name">{{k.user_name}}</p>
+               <p class="name"></p>
                <p class="company">西点科技</p>
                </div>
                <div class="main_left_bottom">
@@ -51,9 +51,9 @@ export default {
        proAll(){
            //跳转后的页面代码
         let self=this;          
-          this.$axios.post("/wb/programmer/detailed/message",{user_email: this.getDta}).then(function(res){
+          this.$axios.post("/api/programmer/detailed/message",{user_email:this.getDta}).then(function(res){
               console.log(res);
-              self.proList=res.data.data.showExcellent;
+              self.proList=res.data;
               console.log(self.proList);
           })
          },

@@ -175,8 +175,8 @@
           <img :src="item.user_avatar" />
         </div>
         <p>姓名：{{item.user_name}}</p>
-        <p>类型：{{item.user_role}}</p>
-        <p>邮箱号：{{item.user_email}}</p>
+        <p>邮箱{{item.user_email}}</p>
+        <p>标签：{item.user_role}}</p>
       </div>
     </div>
     <!-- 会员 -->
@@ -377,7 +377,7 @@ export default {
     //获取程序员接口
     dataAll() {
       let self = this;
-      this.$axios.post("/wb/excellent").then(function(res) {
+      this.$axios.post("/api/excellent").then(function(res) {
         console.log(res);
         self.cxyList = res.data.data.showExcellent;
         console.log(self.cxyList);

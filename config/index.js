@@ -12,19 +12,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
      "/api":{
-       target:'http://192.168.1.119:8080',
+       target:'http://192.168.31.254:9999',
        changeOrigin:true,//是否跨域，true为是
        pathRewrite:{
-         '^/api':'http://192.168.1.119:8080',
+         '^/api':'http://192.168.31.254:9999',
        }
     },
-    "/wb":{
-      target:'http://192.168.1.112:9999',
-      changeOrigin:true,//是否跨域，true为是
-      pathRewrite:{
-        '^/wb':'http://192.168.1.112:9999',
-      }
-   },
   },
 
     // Various Dev Server settings

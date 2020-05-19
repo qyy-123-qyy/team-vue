@@ -21,11 +21,11 @@
       >
         <!-- 手机号 -->
         <el-form-item prop="email">
-          <el-input v-model="registForm.email" placeholder="请输入邮箱" @blur="yx"></el-input>
+          <el-input v-model="registForm.email" placeholder="请输入邮箱" ></el-input>
         </el-form-item>
         <!-- 验证码 -->
         <el-form-item prop="captcha">
-          <el-input v-model="registForm.captcha" class="regist_captcha" placeholder="短信验证码"></el-input>
+          <el-input v-model="registForm.captcha" class="regist_captcha" placeholder="邮箱验证码"></el-input>
           <el-button type="info" @click="getcode">获取验证码</el-button>
         </el-form-item>
         <!-- 用户名 -->
@@ -86,14 +86,14 @@ export default {
         callback();
       }
     };
-    // var validateEmail = (rule, value, callback) => {
-    //   if(value === "code:20000") {
-    //     callback("邮箱可用");
-    //   }else{
-    //      callback(new Error("邮箱不可用"));
-    //   }
-    //   console.log(value);
-    // };
+    var validateEmail = (rule, value, callback) => {
+      if(value === "code:200") {
+        callback("邮箱可用");
+      }else{
+         callback(new Error("邮箱不可用"));
+      }
+      console.log(value);
+    };
     return {
       //登录表单数据对象
       registForm: {
@@ -102,25 +102,13 @@ export default {
         pass: "",
         captcha: "",
         role:0,
-        userName:""
+        userName:"",
       },
       //表单验证
       registFormRules: {
         //用户名
         email: [
           { required: true, message: "请输入正确的邮箱", trigger: "blur" },
-          // {validator:function(rule,value,callback){
-          //     if(/^1[34578]\d{9}$/.test(value) == false){
-          //         callback(new Error("请输入正确的手机号"));
-          //     }else{
-          //         callback();
-          //     }
-          // }, trigger: 'blur'},
-          // {
-          //   pattern: /^1[34578]\d{9}$/,
-          //   trigger: "blur",
-          //   message: "请输入正确的手机号"
-          // }
         ],
         //设置密码
         checkpass: [
@@ -142,32 +130,39 @@ export default {
       this.$router.push("/login");
     },
     getcode(){
-      this.$axios.post('/api/user/sendEmail',{
-        userEmail:this.registForm.email
+      //获取验证码
+      this.$axios.post('/api/verification/code',{
+        user_email:this.registForm.email
       }).then(res=>{
+        
         console.log(res);
       })
     },
     zhuce(){
       console.log(this.registForm.role)
-      this.$axios.post('/api/user/register',{
-        userEmail:this.registForm.email,
-        userName:this.registForm.userName,
-        userPassword:this.registForm.pass,
-        userRole:this.registForm.role,
-        yzm:this.registForm.captcha,
+      this.$axios.post('/api/register',{
+        user_email:this.registForm.email,
+        user_emailTo:this.registForm.email,
+        user_name:this.registForm.userName,
+        user_password:this.registForm.pass,
+        user_role:this.registForm.role,
+        verificationCode:this.registForm.captcha,
         i:this.registForm.role
       }).then(res=>{
         console.log(res);
+        if(res.data.code===200){
+          console.log(1)
+          // this.$router.push("/login")
+        }
       })
     },
-    yx(){
-      this.$axios.post('/api/user/cEmain',{
-        userEmail:this.registForm.email
-      }).then(res=>{
-        console.log(res);
-      })
-    }
+    // yx(){
+    //   this.$axios.post('/api/user/cEmain',{
+    //     userEmail:this.registForm.email
+    //   }).then(res=>{
+    //     console.log(res);
+    //   })
+    // }
   }
 };
 </script>
